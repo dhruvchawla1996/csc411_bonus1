@@ -35,7 +35,7 @@ for n in range(1, len(y)):
     performance += [100 * correct/float(total)]
 
 # Plot performance and save image
-plt.plot(K, performance, color="k", linewidth=2, marker="o")
+plt.plot(K, performance, color="b", linewidth=2)
 
 plt.title("Performance on training set with K")
 plt.xlabel("K")

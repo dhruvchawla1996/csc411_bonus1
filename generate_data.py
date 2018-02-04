@@ -17,7 +17,7 @@ def generate_data():
 
     for i in range(8):
         for j in range(8):
-            for k in range(5):
+            for k in range(20):
                 x_coord = i - 0.5 + np.random.random_sample()
                 y_coord = j - 0.5 + np.random.random_sample()
 
