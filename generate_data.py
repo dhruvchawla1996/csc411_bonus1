@@ -10,9 +10,9 @@ def generate_data():
 
 	label = 1
 
-	for i in range(1, 200):
-		X.extend([0, i], [i, 0], [0, -1*i], [-1*i, 0])
-		y.extend([label, label, label, label])
+	for i in range(1, 3):
+		X += [[0, i]] + [[i, 0]] + [[0, -1*i]] + [[-1*i, 0]]
+		y += 4*[label]
 
 		label = 1 - label
 
