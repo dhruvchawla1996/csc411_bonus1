@@ -13,6 +13,8 @@ from pylab import *
 
 from generate_data import *
 
+plt.switch_backend('agg')
+
 # Dataset and labels
 X, y = generate_data()
 
@@ -38,4 +40,4 @@ plt.plot(K, performance, color="k", linewidth=2, marker="o")
 plt.title("Performance on training set with K")
 plt.xlabel("K")
 plt.ylabel("Performance on training set")
-plt.savefig("performance.jpg")
+plt.savefig("performance.png")
