@@ -7,13 +7,18 @@ from sklearn.neighbors import KNeighborsClassifier
 
 from generate_data import *
 
-n_neighbors = 3
+n_neighbors = [1, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750]
 
 # Dataset and labels
-X = [[0, 0], [1, 1], [5, 4]]
-y = [0, 1, 0]
+X, y = generate_data()
 
-neigh = KNeighborsClassifier(n_neighbors)
-neigh.fit(X, y)
+for n in n_neighbors:
+    neigh = KNeighborsClassifier(n)
+    neigh.fit(X, y)
 
-print(neigh.predict(X))
+    prediction = neigh.predict(X)
+
+    total = len(prediction)
+    correct = sum(np.absolute(y - prediction))
+
+    print(correct/(float)total)
