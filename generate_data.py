@@ -11,8 +11,10 @@ def generate_data():
 	label = 1
 
 	for i in range(1, 3):
-		X += [[0, i]] + [[i, 0]] + [[0, -1*i]] + [[-1*i, 0]]
-		y += 4*[label]
+
+		for j in range(8):
+			X += [[i * np.cos(j/8 * 2*np.pi), i * np.sin(j/8 * 2*np.pi)]]
+			y += [label]
 
 		label = 1 - label
 
