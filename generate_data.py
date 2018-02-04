@@ -15,29 +15,40 @@ def generate_data():
 
     np.random.seed(5)
 
-    for k in range(100):
-        x_coord = 1 - 0.5 + np.random.random_sample()
-        y_coord = 1 - 0.5 + np.random.random_sample()
+    # for k in range(100):
+    #     x_coord = 1 - 0.5 + np.random.random_sample()
+    #     y_coord = 1 - 0.5 + np.random.random_sample()
 
-        X += [[x_coord, y_coord]]
-        y += [label]
+    #     X += [[x_coord, y_coord]]
+    #     y += [label]
 
-    label = 1 - label
+    # label = 1 - label
+
+    # for i in range(3):
+    #     for j in range(3):
+
+    #         if i == 1 and j == 1: continue
+
+    #         for k in range(100):
+    #             x_coord = i - 0.5 + np.random.random_sample()
+    #             y_coord = j - 0.5 + np.random.random_sample()
+
+    #             X += [[x_coord, y_coord]]
+    #             y += [label]
+
+    #         #label = 1 - label
+
+    #     #label = 1 - label
 
     for i in range(3):
-        for j in range(3):
-
-            if i == 1 and j == 1: continue
-
-            for k in range(100):
-                x_coord = i - 0.5 + np.random.random_sample()
-                y_coord = j - 0.5 + np.random.random_sample()
+        for j in range(8):
+            for k in range(20):
+                x_coord = (i - 0.5 + np.random.random_sample()) * np.cos(j/8 * 2*np.pi)
+                y_coord = (i - 0.5 + np.random.random_sample()) * np.sin(j/8 * 2*np.pi)
 
                 X += [[x_coord, y_coord]]
                 y += [label]
 
-            #label = 1 - label
-
-        #label = 1 - label
+        label = 1 - label
 
     return X, y
