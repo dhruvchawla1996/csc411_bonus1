@@ -39,5 +39,5 @@ plt.plot(K, performance, color="b", linewidth=2)
 
 plt.title("Performance on training set with K")
 plt.xlabel("K")
-plt.ylabel("Performance on training set")
+plt.ylabel("Performance on training set (%)")
 plt.savefig("performance.png")
