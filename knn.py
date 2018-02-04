@@ -10,6 +10,7 @@ from generate_data import *
 # Dataset and labels
 X, y = generate_data()
 
+# Run kNN with increasing K
 for n in range(1, len(y)):
     neigh = KNeighborsClassifier(n)
     neigh.fit(X, y)
