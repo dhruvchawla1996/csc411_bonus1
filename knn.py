@@ -6,6 +6,10 @@ import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import os
+from scipy.ndimage import filters
+import matplotlib.cbook as cbook
+from pylab import *
 
 from generate_data import *
 
@@ -28,10 +32,10 @@ for n in range(1, len(y)):
     K += [n]
     performance += [100 * correct/float(total)]
 
-# Plot performace and save image
-plt.plot(K, performace, color="k", linewidth=2, marker="o")
+# Plot performance and save image
+plt.plot(K, performance, color="k", linewidth=2, marker="o")
 
 plt.title("Performance on training set with K")
 plt.xlabel("K")
 plt.ylabel("Performance on training set")
-plt.savefig("performace.jpg")
+plt.savefig("performance.jpg")
