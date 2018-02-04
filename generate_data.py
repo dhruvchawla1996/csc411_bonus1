@@ -3,7 +3,7 @@ import numpy as np
 
 def generate_data():
     """Generate random data resembling a chess board
-    
+
     Returns
     X: list(list(x, y)) : coordinates of chess board
     y: list(either 0 or 1)
@@ -15,8 +15,8 @@ def generate_data():
 
     np.random.seed(5)
 
-    for i in range(8):
-        for j in range(8):
+    for i in range(20):
+        for j in range(20):
 
             x_coord = i - 0.5 + np.random.random_sample()
             y_coord = j - 0.5 + np.random.random_sample()
