@@ -18,8 +18,8 @@ def generate_data():
     for i in range(3):
         for j in range(32):
             for k in range(20):
-                x_coord = (i - 0.5 + np.random.random_sample()) * np.cos(j/8 * 2*np.pi)
-                y_coord = (i - 0.5 + np.random.random_sample()) * np.sin(j/8 * 2*np.pi)
+                x_coord = (i - 0.5 + np.random.random_sample()) * np.cos(j/32 * 2*np.pi)
+                y_coord = (i - 0.5 + np.random.random_sample()) * np.sin(j/32 * 2*np.pi)
 
                 X += [[x_coord, y_coord]]
                 y += [label]
