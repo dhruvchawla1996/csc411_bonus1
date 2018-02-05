@@ -18,10 +18,10 @@ def plot_data():
     x_0, y_0, x_1, y_1 = [], [], [], []
 
     for i in range(len(X)):
-        if y[i] == 0: 
+        if y[i] == 0:
             x_0.append(X[i][0])
             y_0.append(X[i][1])
-        else if y[i] == 1: 
+        elif y[i] == 1:
             x_1.append(X[i][0])
             y_1.append(X[i][1])
 
