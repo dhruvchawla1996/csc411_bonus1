@@ -1,6 +1,8 @@
 """CSC411: Project 1 (bonus)
    Dhruv Chawla"""
 
+# PLEASE USE PYTHON3
+
 # Imports
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier

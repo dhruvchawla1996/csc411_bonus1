@@ -2,11 +2,11 @@
 import numpy as np
 
 def generate_data():
-    """Generate random data resembling a chess board
+    """Generate random data resembling alternating concentric rings
 
     Returns
-    X: list(list(x, y)) : coordinates of chess board
-    y: list(either 0 or 1)
+    X: list(list(x, y)) : coordinates of the data point
+    y: list(either 0 or 1) : label of the data point
     """
     X = []
     y = []
