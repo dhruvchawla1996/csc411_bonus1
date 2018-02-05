@@ -183,7 +183,8 @@
 %   PAGE
 %----------------------------------------------------------------------------------------
 
-\noindent \textit{Investigating K Nearest Neightbours: Increasing training set performance on increasing K}\\
+\subsection{Investigating K Nearest Neightbours}
+\textit{Increasing training set performance on increasing K}\\
 
 K Nearest Neighbours works on the assumption that data points with same labels are going to be bunched together (are going to be close together in terms of how we are measuring distance in out model)\\
 
@@ -228,7 +229,7 @@ def generate_data():
 
     for i in range(3):
         for j in range(8):
-            for k in range(40):
+            for k in range(60):
                 x_coord = (i - 0.5 + np.random.random_sample()) * np.cos(j/8 * 2*np.pi)
                 y_coord = (i - 0.5 + np.random.random_sample()) * np.sin(j/8 * 2*np.pi)
 
@@ -249,6 +250,14 @@ This data set challenges the underlying assumption of K Nearest Neighbours and p
     \label{fig:fig3}
 \end{figure*}
 
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%   REFERENCES
+%----------------------------------------------------------------------------------------
+
+\subsection{References}
+1. https://www.analyticsvidhya.com/blog/2014/10/introduction-k-neighbours-algorithm-clustering/
 \clearpage
 
 %----------------------------------------------------------------------------------------
