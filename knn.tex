@@ -190,23 +190,23 @@ K Nearest Neighbours works on the assumption that data points with same labels a
 
 \begin{figure*}[h!]
     \centering
-    \includegraphics[scale=0.5]{K-judgement2.png}
+    \includegraphics[scale=0.4]{K-judgement2.png}
     \caption{K Nearest Neighbours on a dataset (from analyticsvidhya.com)}
     \label{fig:fig1}
 \end{figure*}
 
 As can be observed, the algorithm seems to be working pretty well as the red and blue dot seem to be clustering in specific areas.\\
 
-Also, observe that in $K=7$ case, the performance on the training set seems to be lower than on the $K=5$ case (more blue and red dots are being classified as the other way around). This can also be seen on the error vs K chart produced (more error means worse performance on the training set).\\ 
+Also, observe that in $K=3$ case, the performance on the training set seems to be lower than on the $K=1$ case (more blue and red dots are being classified as the other way around). This can also be seen on the error vs K chart produced (more error means worse performance on the training set).\\ 
 
 \begin{figure*}[h!]
     \centering
-    \includegraphics[scale=0.5]{training-error.png}
+    \includegraphics[scale=0.4]{training-error.png}
     \caption{Error vs K (from analyticsvidhya.com)}
     \label{fig:fig2}
 \end{figure*}
 
-This can be generally understood as the more you increase, the more influence surrounding neighbours of different labels have and they can swing the classifier to their favour (especially on boundary data points). As an extension, performance on $K=1$ is always a 100\% as the only neighbour we are considering is the data point itself.\\
+This can be generally understood as the more you increase $K$, the more influence surrounding neighbours of potentially different labels have and they can swing the classifier to their favour (especially on data points that are on a boundary). As an extension, performance on $K=1$ is always a 100\% as the only neighbour we are considering is the data point itself.\\
 
 In this investigation, I have tried to produce a data set which does not have data points cluster together in terms of Euclidian/Cartesian distance (although they would in terms of Polar/Radial distances). My dataset can be described as concentric circular rings with alternating labels.\\
 
@@ -241,14 +241,30 @@ def generate_data():
     return X, y
 \end{python}
 
-This data set challenges the underlying assumption of K Nearest Neighbours and produces a dip in training set performance at around $K=120$. Performance picks up soon after as the outermost ring starts to influence the inner circle classification. The performance finally settles at roughly 67\%, which is due to the fact that there are twice as many data points labelled as 1 than labelled as 0.\\
+\begin{figure*}[h!]
+    \centering
+    \includegraphics[scale=0.7]{data.png}
+    \caption{Data set visualized}
+    \label{fig:fig3}
+\end{figure*}
+
+This data set challenges the underlying assumption of K Nearest Neighbours and produces a dip in training set performance at around $K=400$. Performance picks up soon after as the outermost ring starts to influence the inner circle classification. The performance finally settles at roughly 67\%, which is due to the fact that there are twice as many data points labelled as 1 than labelled as 0.\\
 
 \begin{figure*}[h!]
     \centering
     \includegraphics[scale=1]{performance.png}
     \caption{Performance vs K on training set}
-    \label{fig:fig3}
+    \label{fig:fig4}
 \end{figure*}
+
+\textbf{Insight}\\
+The circumstances under which performance increases on increasing $K$ in K Nearest Neighbours is when the data set in arranged in a way that when $K$ is increased slightly at first, data points find themselves surrounded by data points of a different label.\\
+
+In this case, this was when $K > 1$ and $K < 400$ and the data points in inner circle and data points in outermost ring were being influenced by the middle ring data points.\\
+
+On increasing $K$ further, the performance would start rising towards the final performance when $K$ is infinitely large as we are considering nearly all points in the training set and the performance just becomes a majority vote.\\
+
+In this case, this can be seen when $K$ is between $400$ and $500$. The inner circle and outermost ring come in influence of each other and make the performance rise towards the final value of 67\%.
 
 \clearpage
 
